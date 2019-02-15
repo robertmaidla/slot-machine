@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Slot machine</title>
+</head>
+<body>
+  <h1>Slot machine</h1>
+
+  <div id="game">
+    <div id="balanceDiv">
+      <form action="" id="test">
+        <input id="balanceInput" type="number" min="1" max="5000" placeHolder="Coins">
+        <input id="balanceSubmit" type="submit" value="Insert coin(s)">
+      </form>
+      <h2 id="balanceVal">Balance: </h2>
+    </div>
+    <div id="spinDiv">
+      <button id="spinButton" type="button" onclick="spinReelsButton()">SPIN</button>
+    </div>
+    <div>
+      <canvas id="reelCanvas1" width="141" height="242" style="border:1px solid #000"></canvas>
+      <canvas id="reelCanvas2" width="141" height="242" style="border:1px solid #000"></canvas>
+      <canvas id="reelCanvas3" width="141" height="242" style="border:1px solid #000"></canvas>
+    </div>
+  </div>
+
+  <div id="payTable">
+    <table>
+      <tr>
+        <th></th>
+        <th>Top Line</th>
+        <th>Center Line</th>
+        <th>Bottom Line</th>
+      </tr>
+      <tr>
+        <th>3xCHERRY</th>
+        <td id="topCherry">2000</td>
+        <td id="midCherry">1000</td>
+        <td id="bottomCherry">4000</td>
+      </tr>
+      <tr>
+        <th>3x7</th>
+        <td id="topSeven">150</td>
+        <td id="midSeven">150</td>
+        <td id="bottomSeven">150</td>
+      </tr>
+      <tr>
+        <th>CHERRY & 7</th>
+        <td id="topCherrySeven">75</td>
+        <td id="midCherrySeven">75</td>
+        <td id="bottomCherrySeven">75</td>
+      </tr>
+      <tr>
+        <th>3xBAR3</th>
+        <td id="topBar3">50</td>
+        <td id="midBar3">50</td>
+        <td id="bottomBar3">50</td>
+      </tr>
+      <tr>
+        <th>3xBAR2</th>
+        <td id="topBar2">20</td>
+        <td id="midBar2">20</td>
+        <td id="bottomBar2">20</td>
+      </tr>
+      <tr>
+        <th>3xBAR</th>
+        <td id="topBar">10</td>
+        <td id="midBar">10</td>
+        <td id="bottomBar">10</td>
+      </tr>
+      <tr>
+        <th>3xAny BAR</th>
+        <td id="topBarAny">5</td>
+        <td id="midBarAny">5</td>
+        <td id="bottomBarAny">5</td>
+      </tr>
+
+    </table>
+    <div id="debugDiv">
+      <h2>Debug area</h2>
+      <table>
+        <tr>
+          <th></th>
+          <th>Reel 1</th>
+          <th>Reel 2</th>
+          <th>Reel 3</th>
+        </tr>
+        <tr>
+          <th>Symbol</th>
+          <td>
+            <select name="Symbol" id="symbolSelectReel1">
+              <option value="random">Random</option>
+              <option value="bar">BAR</option>
+              <option value="bar2">BAR2</option>
+              <option value="bar3">BAR3</option>
+              <option value="seven">7</option>
+              <option value="cherry">CHERRY</option>
+            </select>
+          </td>
+          <td>
+            <select name="Symbol" id="symbolSelectReel2">
+              <option value="random">Random</option>
+              <option value="bar">BAR</option>
+              <option value="bar2">BAR2</option>
+              <option value="bar3">BAR3</option>
+              <option value="seven">7</option>
+              <option value="cherry">CHERRY</option>
+            </select>
+          </td>
+          <td>
+            <select name="Symbol" id="symbolSelectReel3">
+              <option value="random">Random</option>
+              <option value="bar">BAR</option>
+              <option value="bar2">BAR2</option>
+              <option value="bar3">BAR3</option>
+              <option value="seven">7</option>
+              <option value="cherry">CHERRY</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>Landing position</th>
+          <td>
+            <select name="LandingPos" id="landingPositionReel1">
+              <option value="random">Random</option>
+              <option value="top">Top</option>
+              <option value="mid">Center</option>
+              <option value="bottom">Bottom</option>
+            </select>
+          </td>
+          <td>
+            <select name="LandingPos" id="landingPositionReel2">
+              <option value="random">Random</option>
+              <option value="top">Top</option>
+              <option value="mid">Center</option>
+              <option value="bottom">Bottom</option>
+            </select>
+          </td>
+          <td>
+            <select name="LandingPos" id="landingPositionReel3">
+              <option value="random">Random</option>
+              <option value="top">Top</option>
+              <option value="mid">Center</option>
+              <option value="bottom">Bottom</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="./game/reel/reel.js"></script>
+  <script src="./game/game.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
